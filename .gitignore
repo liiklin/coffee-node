@@ -30,8 +30,10 @@ node_modules/
 output/
 output.tar.gz
 
-#忽略根目录的app文件夹
-/app/
+# 忽略根目录的app文件夹
+app/
+*.lock
+*.log
 
 runtime/
 .DS_Store

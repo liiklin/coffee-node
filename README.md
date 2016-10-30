@@ -1,11 +1,16 @@
 # 玩物一个 :smirk:
 ***
 
-    使用hapi作为中间件
+    使用express作为中间件
 
 ## 开发环境
 ```
-npm install && npm start
+npm install && npm run dev
+```
+
+## 生产环境
+```
+npm install && npm run start
 ```
 
 ## TODO
