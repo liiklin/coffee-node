@@ -1,5 +1,5 @@
 # Logs
-logs
+# logs
 *.log
 
 # Runtime data
@@ -30,10 +30,11 @@ node_modules/
 output/
 output.tar.gz
 
-# 忽略根目录的app文件夹
+# 忽略根目录的自定义文件
+cache/openId
 app/
 *.lock
-*.log
+
 
 runtime/
 .DS_Store

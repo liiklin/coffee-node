@@ -1,2 +1,6 @@
 $(document).ready ->
-  console.log 'ready'
+  demo()
+
+
+demo = ->
+  console.info "demo"

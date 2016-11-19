@@ -3,11 +3,14 @@ require("source-map-support").install()
 
 express = require "express"
 useragent = require "express-useragent"
+errorhandler = require 'errorhandler'
+fs = require 'fs'
+path = require 'path'
+WechatAPI = require 'wechat-api'
+webot = require 'weixin-robot'
 logger = require "morgan"
-errorhandler = require('errorhandler')
 
 # customer module
-routes = require('./route/index')
 
 # express
 app = express()
@@ -21,7 +24,10 @@ if isDev
   app.use errorhandler()
 
 # routes
-app.use '/', routes
+# frontend pages
+app.use '/', require './route/index'
+# wechat todo
+app.use '/weixinmp', require './route/wechat'
 
 # 静态文件
 app.use "/static", express.static "static"
@@ -34,4 +40,4 @@ server = app.listen 3000, () ->
   host = server.address().address
   port = server.address().port
 
-  console.log "Example app listening at http://:#{host}#{port}"
+  console.log "Nodejs Example app listening at http://:#{host}#{port}"

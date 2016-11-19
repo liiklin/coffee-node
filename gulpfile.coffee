@@ -21,7 +21,7 @@ gulp.task 'validate_coffee_backend', ->
 gulp.task 'compile_coffee_backend', [ 'validate_coffee_backend' ], ->
   gulp.src banckend_coffeescript_files
   .pipe sourcemaps.init()
-  .pipe coffee bare: false
+  .pipe coffee bare: true
   .pipe uglify()
   .pipe sourcemaps.write './'
   .on 'error', gutil.log
